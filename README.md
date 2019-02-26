@@ -1,5 +1,5 @@
 # web-340
-Node.js
+Node js
 # contributors
 Professor Krasso - Bellevue University  
 Tyler Armstrong - Bellevue University

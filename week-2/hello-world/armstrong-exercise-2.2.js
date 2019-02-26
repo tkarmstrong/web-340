@@ -1,3 +1,13 @@
+/*
+============================================
+; Title:  Exercise 2.2 - Hello World
+; Author: Professor Krasso
+; Date:   24 February 2019
+; Modified By: Tyler Armstrong
+; Description: Showcases Express's app server.
+;===========================================
+*/
+
 const express = require("express");
 
 const http = require("http");

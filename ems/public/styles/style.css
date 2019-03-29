@@ -18,11 +18,16 @@
   background-size: cover;
 }
 
+/* Global Styles
+----------------------------------------------- */
+
 .jumbotron h1 {
   margin-top: 150px;
 }
 
-/* Extra small devices (portrait phones, less than 576px) */
+/* Extra small devices (portrait phones, less than 576px)
+-------------------------------------------------------- */
+
 @media (max-width: 575px)  {
 
   .jumbotron { min-height: 300px; }
@@ -30,7 +35,8 @@
   .jumbotron h1 { margin-top: 80px; }
 }
 
-/* Small devices (landscape phones, 576px and up) */
+/* Small devices (landscape phones, 576px and up)
+---------------------------------------------------- */
 @media (min-width: 576px) and (max-width: 767px)  {
 
   .jumbotron { min-height: 300px; }
@@ -38,7 +44,8 @@
   .jumbotron h1 { margin-top: 50px; }
 }
 
-/* Medium devices (tablets, 768px and up) */
+/* Medium devices (tablets, 768px and up)
+---------------------------------------------------- */
 @media (min-width: 768px) and (max-width: 991px)  {
 
   .jumbotron { min-height: 300px; }
@@ -46,7 +53,8 @@
   .jumbotron h1 { margin-top: 80px; }
 }
 
-/* Large devices (desktops, 992px and up) */
+/* Large devices (desktops, 992px and up)
+------------------------------------------------------*/
 @media (min-width: 992px) and (max-width: 1199px)  {
 
 }

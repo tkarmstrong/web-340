@@ -1,3 +1,13 @@
+/*
+============================================
+; Title:  Assignment 5.2 - if else render
+; Author: Tyler Armstrong
+; Date:   04 Apr 2019
+; Modified By: N/A
+; Description: Showcases if else render in ejs.
+;===========================================
+*/
+
 const express = require("express");
 
 const http = require("http");

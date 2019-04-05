@@ -1,3 +1,13 @@
+/*
+============================================
+; Title:  Assignment 3.4 - Putting It All Together
+; Author: Tyler Armstrong
+; Date:   04 Apr 2019
+; Modified By: N/A
+; Description: Showcases logging with Morgan & advanced routing.
+;===========================================
+*/
+
 var express = require("express");
 
 var http = require("http");

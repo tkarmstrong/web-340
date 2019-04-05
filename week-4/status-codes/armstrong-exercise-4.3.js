@@ -1,3 +1,13 @@
+/*
+============================================
+; Title:  Assignment 4.3 - Status Codes
+; Author: Tyler Armstrong
+; Date:   04 Apr 2019
+; Modified By: N/A
+; Description: Showcases Status Codes.
+;===========================================
+*/
+
 let express = require("express");
 
 let http = require('http');

@@ -1,3 +1,13 @@
+/*
+============================================
+; Title:  Exercise 4.2 - API JSON
+; Author: Tyler Armstrong
+; Date:   04 Apr 2019
+; Modified By: N/A
+; Description: Showcases API JSON.
+;===========================================
+*/
+
 let express = require('express');
 
 let http = require('http');

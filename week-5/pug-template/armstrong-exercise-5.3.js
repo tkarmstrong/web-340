@@ -1,3 +1,13 @@
+/*
+============================================
+; Title:  Assignment 5.3 - Pug Template
+; Author: Tyler Armstrong
+; Date:   04 Apr 2019
+; Modified By: N/A
+; Description: Showcases using Pug templating language.
+;===========================================
+*/
+
 const express = require("express");
 
 const http = require("http");

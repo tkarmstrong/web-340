@@ -14,6 +14,9 @@ const path = require("path");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 
+// Assign model
+const Employee = require("./models/employee");
+
 // Connect to DB
 const mongoDB = "mongodb+srv://test_user1:Pa$$word@ems-qmc0r.mongodb.net/test?retryWrites=true";
 mongoose.connect(mongoDB, {
@@ -42,6 +45,12 @@ app.get("/", function (request, response) {
     title: "Home page",
     year: new Date().getFullYear()
   });
+});
+
+// Model
+let employee = new Employee({
+  firstName: "Tyler",
+  lastName: "Armstrong"
 });
 
 // Fire up Node server

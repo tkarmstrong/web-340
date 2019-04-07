@@ -1,9 +1,9 @@
 /*
 ============================================
-; Title:  employee.js
+; Title:  app.js
 ; Author: Tyler Armstrong
 ; Date:   7 April 2019
-; Description: File for the employee database model
+; Description: Server file for the ems application
 ;===========================================
 */
 

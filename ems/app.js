@@ -58,7 +58,8 @@ app.use(function(request, response, next) {
   next();
 });
 
-// Homepage
+// Routes
+  // Homepage
 app.get("/", function (request, response) {
   response.render("index", {
     title: "Home page",
@@ -67,16 +68,53 @@ app.get("/", function (request, response) {
   });
 });
 
-// EJS 'new' post
-app.post("/process", function(request, response) {
-  console.log(request.body.txtName);
-  response.redirect("/");
+  // List
+app.get("/list", function(request, response) {
+  Employee.find({}, function(error, employees) {
+     if (error) throw error;
+     response.render("list", {
+         title: "Employee List",
+         year: new Date().getFullYear(),
+         employees: employees
+     });
+  });
 });
 
-// Model
-let employee = new Employee({
-  firstName: "Tyler",
-  lastName: "Armstrong"
+  // List
+  app.get("/new", function(request, response) {
+    response.render("new", {
+      title: "Add Employee",
+      year: new Date().getFullYear(),
+      message: "Add Employee"
+    });
+  });
+
+  // Add Employee
+app.get("/new", function(request, response) {
+  if (error) throw error;
+  response.render("new", {
+    title: "New Employee"
+  });
+});
+
+// Posts
+  // EJS 'new' post
+app.post("/process", function(request, response) {
+  console.log(request.body.txtFirstName);
+  console.log(request.body.txtLastName);
+
+  // Model
+  let employee = new Employee({
+    firstName: request.body.txtFirstName,
+    lastName: request.body.txtLastName
+  });
+
+  employee.save(function (error) {
+    if (error) throw error;
+    console.log(employee + " saved successfully!");
+  });
+
+  response.redirect("/list");
 });
 
 // Fire up Node server

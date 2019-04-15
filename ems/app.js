@@ -13,6 +13,7 @@ const http = require("http");
 const path = require("path");
 const logger = require("morgan");
 const mongoose = require("mongoose");
+const helmet = require("helmet");
 
 // Assign model
 const Employee = require("./models/employee");
@@ -38,6 +39,7 @@ app.set("view engine", "ejs");
 
 // Use dependencies
 app.use(logger("short"));
+app.use(helmet.xssFilter());
 
 // Homepage
 app.get("/", function (request, response) {

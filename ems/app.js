@@ -14,6 +14,9 @@ const path = require("path");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 const helmet = require("helmet");
+const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
+const csrf = require("csurf");
 
 // Assign model
 const Employee = require("./models/employee");
@@ -29,6 +32,9 @@ db.once("open", function() {
   console.log("Application connected to Atlas MongoDB instance");
 });
 
+// Setup csrf protection
+const csrfProtection = csrf({cookie: true});
+
 // Start express application
 const app = express();
 
@@ -40,13 +46,31 @@ app.set("view engine", "ejs");
 // Use dependencies
 app.use(logger("short"));
 app.use(helmet.xssFilter());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+app.use(cookieParser());
+app.use(csrfProtection);
+app.use(function(request, response, next) {
+  var token = request.csrfToken();
+  response.cookie('XSRF-TOKEN', token);
+  response.locals.csrfToken = token;
+  next();
+});
 
 // Homepage
 app.get("/", function (request, response) {
   response.render("index", {
     title: "Home page",
-    year: new Date().getFullYear()
+    year: new Date().getFullYear(),
+    message: "EJS Test"
   });
+});
+
+// EJS 'new' post
+app.post("/process", function(request, response) {
+  console.log(request.body.txtName);
+  response.redirect("/");
 });
 
 // Model

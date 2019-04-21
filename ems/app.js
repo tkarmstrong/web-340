@@ -42,6 +42,7 @@ const app = express();
 app.set("views", path.resolve(__dirname, "views"));
 app.use(express.static(__dirname + '/public'));
 app.set("view engine", "ejs");
+app.set("port", process.env.PORT || 8080);
 
 // Use dependencies
 app.use(logger("short"));
@@ -139,6 +140,6 @@ app.post("/process", function(request, response) {
 });
 
 // Fire up Node server
-http.createServer(app).listen(8080, function() {
-  console.log("Application started on port 8080!");
+http.createServer(app).listen(app.get("port"), function() {
+  console.log("Application started on port " + app.get("port"))
 });

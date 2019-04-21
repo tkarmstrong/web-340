@@ -89,6 +89,27 @@ app.get("/list", function(request, response) {
     });
   });
 
+  // View
+  app.get("/view/:queryName", function(request, response) {
+    var queryName = request.params.queryName;
+
+    Employee.find({ lastName: queryName }, function(error, employees) {
+      if (error) throw error;
+
+      console.log(employees);
+
+      if (employees.length > 0) {
+        response.render("view", {
+          title: "Employee Record",
+          year: new Date().getFullYear(),
+          employee: employees
+        });
+      } else {
+        response.redirect("/list");
+      }
+    });
+  });
+
   // Add Employee
 app.get("/new", function(request, response) {
   if (error) throw error;
